@@ -20,9 +20,6 @@ export const About = () => {
                     JCL tidak hanya membantu pengguna menguasai hiragana,
                     katakana, dan kanji, tetapi juga memperkaya pengetahuan
                     mereka tentang budaya dan bahasa Jepang secara keseluruhan.
-                    <span className="indent-1 font-bold">
-                        (Aplikasi Ini Masih Dalam Tahap Pengembangan)
-                    </span>
                 </p>
 
                 <hr className="mx-4 h-1 bg-black" />
