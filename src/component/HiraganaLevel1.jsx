@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 
 export const HiraganaLevel1 = () => {
     const japaneseCharacters = [
@@ -143,6 +143,19 @@ export const HiraganaLevel1 = () => {
                 : hiraganaToRomaji(prevCharacter);
         });
     };
+
+    useEffect(() => {
+        const canvas = canvasRef.current;
+        if (!canvas) return;
+
+        canvas.addEventListener("touchmove", handleTouchMove, {
+            passive: false,
+        });
+
+        return () => {
+            canvas.removeEventListener("touchmove", handleTouchMove);
+        };
+    }, []);
 
     return (
         <div className="mt-20 flex flex-col items-center justify-center p-2">

@@ -32,7 +32,7 @@ export const SideBar = () => {
         <>
             <div className="">
                 <div
-                    className={`fixed top-0 z-40 mr-4 mt-2 inline-flex w-screen items-center p-2 ${isSideBar ? "" : "block"} text-sm text-black focus:ring-2`}
+                    className={`fixed top-0 z-40 mr-4 mt-2 inline-flex w-screen items-center bg-white p-2 ${isSideBar ? "" : "block"} text-sm text-black focus:ring-2`}
                 >
                     <button onClick={toggleSideBar}>
                         <div className="mr-2 flex flex-col gap-1 rounded-lg p-3 hover:bg-slate-400 2xl:hidden">

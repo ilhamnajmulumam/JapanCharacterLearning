@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 
 export const KatakanaLevel2 = () => {
     const japaneseCharacters = [
@@ -139,6 +139,19 @@ export const KatakanaLevel2 = () => {
                 : katakanaToRomaji(prevCharacter);
         });
     };
+
+    useEffect(() => {
+        const canvas = canvasRef.current;
+        if (!canvas) return;
+
+        canvas.addEventListener("touchmove", handleTouchMove, {
+            passive: false,
+        });
+
+        return () => {
+            canvas.removeEventListener("touchmove", handleTouchMove);
+        };
+    }, []);
 
     return (
         <div className="mt-20 flex flex-col items-center justify-center p-2">
